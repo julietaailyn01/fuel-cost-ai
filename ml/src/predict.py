@@ -1,7 +1,7 @@
 import numpy as np
 from pathlib import Path
 
-from linear_regression import predict
+from ml.src.linear_regression import predict
 
 
 # Model path

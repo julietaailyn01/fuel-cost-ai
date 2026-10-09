@@ -21,3 +21,4 @@ Thumbs.db
 # Frontend - lo necesitaremos después
 node_modules/
 .next/
+.pytest_cache/
