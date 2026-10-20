@@ -1,11 +1,22 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from backend.app.services.fuel_service import calculate_fuel_cost
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Fuel Cost AI API",
     description="API para estimar el consumo de combustible",
     version ="1.0.0"
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
 )
 
 class FuelPredictionRequest(BaseModel):
